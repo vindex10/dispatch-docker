@@ -20,6 +20,8 @@ services:
       # project root to pick up changes from your dev environment
       # (e.g., ../dispatch-root)
       context: https://github.com/Netflix/dispatch.git#latest
+      args:
+        VITE_DISPATCH_AUTHENTICATION_PROVIDER_SLUG: "dispatch-auth-provider-basic"
   web:
     <<: *restart_policy
     image: dispatch-local
